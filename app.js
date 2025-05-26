@@ -27,6 +27,15 @@ server.get("/api/company", async (request, reply) => {
     } catch (error) {
         console.error("Erro na consulta de empresas:", error)
         console.log("========================================")
+        
+        
+        if (error.code === 'ECONNREFUSED') {
+            return reply.status(503).send({
+                message: "Serviço indisponível",
+                error: "Banco de dados offline"
+            })
+        }
+        
         return reply.status(500).send({
             message: "Falha ao carregar empresas",
             error: error.message
@@ -73,6 +82,15 @@ server.put("/api/company/:id", async (request, reply) => {
         console.error("Erro ao atualizar empresa:", error)
         console.log("========================================")
         
+        
+        if (error.code === 'ECONNREFUSED') {
+            return reply.status(503).send({
+                message: "Serviço indisponível",
+                error: "Banco de dados offline"
+            })
+        }
+
+
         return reply.status(500).send({
             message: "Falha ao atualizar empresa",
             error: error.message
@@ -137,6 +155,14 @@ server.post("/api/company", async (request, reply) => {
     } catch (error) {
         console.error("Erro ao criar empresa:", error)
         console.log("========================================")
+
+
+        if (error.code === 'ECONNREFUSED') {
+            return reply.status(503).send({
+                message: "Serviço indisponível",
+                error: "Banco de dados offline"
+            })
+        }
         
         return reply.status(500).send({
             message: "Falha ao criar empresa",
@@ -179,6 +205,15 @@ server.delete("/api/company/:id", async (request, reply) => {
     } catch (error) {
         console.error("Erro ao desativar empresa:", error)
         console.log("========================================")
+        
+
+        if (error.code === 'ECONNREFUSED') {
+            return reply.status(503).send({
+                message: "Serviço indisponível",
+                error: "Banco de dados offline"
+            })
+        }
+
         
         return reply.status(500).send({
             message: "Falha ao desativar empresa",error: error.message
