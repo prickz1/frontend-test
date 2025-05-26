@@ -1,15 +1,12 @@
 import {fastify} from 'fastify'
-import { DatabaseMemory } from './database-memory.js'
+import { db } from './database.js'
 
 const server = fastify()
 
-const database = new DatabaseMemory()
-
 
 server.get('/api/company', async (request, reply) => {
-    const companies = database.list()
-
-    return companies
+  const result = await db.query('SELECT * FROM companies ORDER BY id')
+  return result.rows
 })
 
 server.post('/api/company', async (request, reply) => {
