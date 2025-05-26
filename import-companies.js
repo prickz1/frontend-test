@@ -7,10 +7,11 @@ export async function importCompaniesIfNeeded() {
     const count = parseInt(result.rows[0].count)
     
     if (count > 0) {
-      console.log('Dados já importados anteriormente')
+      console.log("Dados já importados anteriormente")
       return
     }
 
+    console.log("Importando dados da API...")
     const response = await axios.get('https://api.helena.run/test/api/company')
     const companies = response.data
 
