@@ -6,7 +6,15 @@ export class DatabaseMemory{
 
 
   list() {
-    return this.#companies.values();
+    return Array.from(this.#companies.entries()).map((companyArray) =>{
+        const id = companyArray[0];
+        const data = companyArray[1];
+
+        return {
+            id,
+            ...data
+        }
+    })
   }
 
 

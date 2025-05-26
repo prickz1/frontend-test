@@ -1,0 +1,26 @@
+POST http://localhost:3333/api/company
+Content-type: application/json
+
+{
+    "nome": "Empresa X",
+    "descricao": "Uma empresa de tecnologia",
+    "active": true
+}
+
+
+###
+GET http://localhost:3333/api/company
+
+
+###
+PUT http://localhost:3333/api/company/8da947a6-6e8e-4b4d-8757-d67f7bc6673f
+Content-type: application/json
+
+{
+    "nome": "Empresa Y",
+    "descricao": "Uma empresa de tecnologia",
+    "active": true
+}
+
+###
+DELETE http://localhost:3333/api/company/8da947a6-6e8e-4b4d-8757-d67f7bc6673f
