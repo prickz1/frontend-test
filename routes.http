@@ -1,2 +1,28 @@
 ###
 GET http://localhost:3333/api/company
+
+
+###
+PUT http://localhost:3333/api/company/1
+Content-Type: application/json
+
+{
+  "avatarUrl": "https://picsum.photos/seed/picsum/200/300",
+  "nomeFantasia": "Google",
+  "razaoSocial": "Google Inc.",
+  "qtdeFuncionarios": 25100
+}
+
+###
+POST http://localhost:3333/api/company
+Content-Type: application/json
+
+{
+  "avatarUrl": "https://picsum.photos/seed/picsum/200/300",
+  "nomeFantasia": "Empresa Teste3",
+  "razaoSocial": "Empresa Teste3 Inc.",
+  "qtdeFuncionarios": 500
+}
+
+###
+DELETE http://localhost:3333/api/company/12
