@@ -10,7 +10,7 @@ Content-Type: application/json
   "avatarUrl": "https://picsum.photos/seed/picsum/200/300",
   "nomeFantasia": "Google",
   "razaoSocial": "Google Inc.",
-  "qtdeFuncionarios": 25100
+  "qtdeFuncionarios": 25101
 }
 
 ###
@@ -19,8 +19,8 @@ Content-Type: application/json
 
 {
   "avatarUrl": "https://picsum.photos/seed/picsum/200/300",
-  "nomeFantasia": "Empresa Teste3",
-  "razaoSocial": "Empresa Teste3 Inc.",
+  "nomeFantasia": "Empresa Teste",
+  "razaoSocial": "Empresa Teste Inc.",
   "qtdeFuncionarios": 500
 }
 

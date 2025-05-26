@@ -1,14 +1,17 @@
-import {fastify} from 'fastify'
+import { fastify } from 'fastify'
 import { db } from './database.js'
+import { importCompaniesIfNeeded } from './import-companies.js'
 
 const server = fastify()
+
+
+importCompaniesIfNeeded()
 
 
 server.get('/api/company', async (request, reply) => {
   const result = await db.query('SELECT * FROM companies ORDER BY id')
   return result.rows
 })
-
 
 server.put('/api/company/:id', async (request, reply) => {
   const companyId = request.params.id
@@ -32,7 +35,6 @@ server.put('/api/company/:id', async (request, reply) => {
   return reply.status(204).send()
 })
 
-
 server.post('/api/company', async (request, reply) => {
   const {
     avatarUrl,
@@ -41,7 +43,6 @@ server.post('/api/company', async (request, reply) => {
     qtdeFuncionarios
   } = request.body;
 
- 
   const maxId = await db.query('SELECT MAX(id) FROM companies')
   const nextId = (maxId.rows[0].max || 0) + 1;
   
@@ -55,8 +56,7 @@ server.post('/api/company', async (request, reply) => {
   );
 
   return reply.status(201).send(result.rows[0])
-});
-
+})
 
 server.delete('/api/company/:id', async (request, reply) => {
   const companyId = request.params.id
@@ -69,7 +69,6 @@ server.delete('/api/company/:id', async (request, reply) => {
   return reply.status(204).send()
 })
 
-
 server.listen({
-    port: 3333,
+  port: 3333,
 })
