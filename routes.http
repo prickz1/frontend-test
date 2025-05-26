@@ -19,10 +19,10 @@ Content-Type: application/json
 
 {
   "avatarUrl": "https://picsum.photos/seed/picsum/200/300",
-  "nomeFantasia": "Empresa TesteErro",
-  "razaoSocial": "Empresa TesteErro Inc.",
+  "nomeFantasia": "Empresa Teste",
+  "razaoSocial": "Empresa Teste Inc.",
   "qtdeFuncionarios": 500
 }
 
 ###
-DELETE http://localhost:3333/api/company/14
+DELETE http://localhost:3333/api/company/11
