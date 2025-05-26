@@ -1,0 +1,29 @@
+{
+  "name": "frontend-test",
+  "version": "1.0.0",
+  "description": "- Você deve criar uma aplicação front-end utilizando angular(+6), reactJS ou flutter;\r - Utilize **boas práticas** de desenvolvimento e **componentização**. Essa é sua oportunidade de demonstrar suas habilidades;\r - Não nos importamos se a solução estiver **incompleta**, estamos interessados em ver a construção da sua solução;\r - Você pode utilizar qualquer framework ou componente de terceiros que desejar;",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch --no-warnings app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prickz1/frontend-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prickz1/frontend-test/issues"
+  },
+  "homepage": "https://github.com/prickz1/frontend-test#readme",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "fastify": "^5.3.3",
+    "fastify-postgres": "^3.6.0",
+    "fastify-swagger": "^5.1.1"
+  }
+}
