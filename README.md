@@ -83,3 +83,56 @@ Informações:
 ***DIFERENCIAL***
 
 Será considerado um diferencial se você fizer tratamentos de erros, falhas de rede e indicadores de carregamento para melhorar a usabilidade do usuário.
+
+
+## ⚠️ Instruções de Paulo Henrique:
+
+### 1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/seu-repo.git
+cd seu-repo
+```
+
+### 2. Instale as dependências:
+```bash
+npm install
+```
+
+### 3. Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=seu_usuario
+DB_PASSWORD=sua_senha
+DB_NAME=nome_do_banco
+```
+
+---
+
+### 🗃️ Banco de Dados
+
+O banco de dados foi criado **manualmente** utilizando o **pgAdmin**.  
+A tabela `companies` deve ser criada com a seguinte estrutura:
+
+```sql
+CREATE TABLE companies (
+    id SERIAL PRIMARY KEY,
+    "avatarUrl" TEXT,
+    "nomeFantasia" TEXT,
+    "razaoSocial" TEXT,
+    "qtdeFuncionarios" INTEGER,
+    active BOOLEAN DEFAULT TRUE
+);
+```
+
+---
+
+### 🚀 Execução
+
+Para iniciar o servidor, execute o seguinte comando:
+
+```bash
+npm run dev
+```
+
+O servidor será iniciado na porta `3333`.
